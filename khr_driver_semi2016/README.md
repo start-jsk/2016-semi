@@ -3,5 +3,9 @@
 ```
 cd build
 cmake ..
+```
+
+# How to execute
+```
 ./khr_driver
 ```
