@@ -1,4 +1,4 @@
-how to compile
+# How to compile
 
 ```
 cd build
