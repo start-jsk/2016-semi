@@ -44,12 +44,11 @@ int main(int argc, char **argv)
   for (UINT sensor_idx = 0; sensor_idx < 4; sensor_idx++) {
     int sensor_val;
     kondo_read_analog((KondoRef)&ki, &sensor_val, sensor_idx + 1);
+  }
 
   std::cout << "start" << std::endl;
-
   // khrに保存されているfunctionを呼び出す.
   shake_hand();
-  }
 
   // close ------------------------------------------------------------------
   ret = kondo_close(&ki);
