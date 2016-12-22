@@ -22,6 +22,8 @@ unsigned char servo_gain_hard[] = {0x01, 0x04, 0x07, 0x07, 0x07,
 // argv[1]: 使用するKHRのindex（省略した場合は0）
 int main(int argc, char **argv)
 {
+  char str[100];
+  
   // open -------------------------------------------------------------------
   int ret;
   if (argc <= 1) {
@@ -48,8 +50,19 @@ int main(int argc, char **argv)
 
   std::cout << "start" << std::endl;
   // khrに保存されているfunctionを呼び出す.
-  shake_hand();
 
+  while(1){
+    fscanf(stdin, "%s", str);
+    fprintf(stdout, "%s\n", str);
+    if(!strcmp(str, "hogescrewdriver")){
+      printf("OK\n");
+      shake_hand();
+      exit(0);
+    }
+    else
+      printf("NG\n");
+    //
+  }
   // close ------------------------------------------------------------------
   ret = kondo_close(&ki);
   if (ret < 0)
